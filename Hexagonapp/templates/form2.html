@@ -1,0 +1,61 @@
+{% extends "base_generic.html" %}
+    {% block content %}
+
+
+    <div class="container">
+        <div class="form-container">
+
+            <div class="top">
+                <header>Answer this question </header>
+            </div>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        
+        <div class="input-box">
+            <input type="text" class="input-field" name="name" placeholder="Project Name">
+            <i class="bx bx-right-arrow-alt"></i>
+        </div>
+      
+        <table>
+
+            <tr>
+                <td>
+                    <div class="input-box">
+                        <input type="textarea" class="input-field" name="industry_sector" placeholder="Industry/sector" >
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="input-box">
+                        <input type="textarea" class="input-field" name="target_market" placeholder="Target market">
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="input-box">
+                        <input type="textarea" class="input-field" name="unique_value_proposition" placeholder="Unique value proposition">
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="input-box">
+                        <input type="textarea" class="input-field" name="key_objectives" placeholder="Key objectives">
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        <button class = "submit" type="submit">Next</button>
+    </form>
+</div>
+</div> 
+    {%endblock content %}

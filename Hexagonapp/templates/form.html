@@ -1,0 +1,42 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+<div class="container2">
+    <form method="post">
+        {% csrf_token %}
+        <table>
+        {% for q in questions %}
+       
+        {% if forloop.counter0|divisibleby:2 %}
+             <tr>
+        {% endif %}
+        <td>
+            <div class="title">
+                <p>{{ q.title }}</p>
+            </div>
+            <div class="description">
+                <p>{{ q.description }}</p>
+            </div>
+            <div class="input-box2">
+                <input type="textarea" class="textarea" name="{{ q.name }}">
+            </div>
+        </td>
+            {% if not forloop.counter0|divisibleby:2  %}
+                  </tr>
+            {% endif %}
+            {% if forloop.last %}
+            
+            <td>
+                <div class="d">
+                    <button class="submit2" type="submit">Get Your Business Plan</button>
+                </div>
+            </td>
+            {% endif %}
+        
+        {% endfor %}
+    </table>
+        
+    </form>
+</div>
+
+{% endblock content %}

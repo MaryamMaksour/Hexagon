@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      rel="preload"
+      as="style"
+      href="{% static 'css/style.css' %}"
+      onload="this.rel = 'stylesheet'"
+    />
+
+    <title>Hexagon Tool</title>
+
+</head>
+
+<body style="background-image: url('{% static "images/1.jpg"%}')";>
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>Hexagon Tool</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="link">Home</a></li>
+                    <li><a href="{% url 'form2' %}" class="link">Start</a></li>
+                    <li><a href="{% url 'about' %}" class="link">About</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="nav-button">
+                {% if user.is_authenticated %}
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-info">Logout</button>
+                         </form>
+
+                {% else %}
+                    <a href="{% url 'login' %}"><button type="submit" class="btn btn-info" >Login</button></a>
+                    <a href="{% url 'register' %}"><button type="submit" class="btn btn-info" >Register</button></a>
+                {% endif %}
+                        
+            </div>
+      
+        </nav>
+
+        <div class = "text" >
+            <p>
+            Hexagon
+        </p> 
+            is a comprehensive online platform designed to streamline the process of<br>
+            developing a business plan and a business model canvas for entrepreneurs across various sectors.<br>
+            The platform employs state-of-the-art GPT-4 algorithms to guide users through <br>
+            the process, ensuring simplicity and effectiveness.
+                      
+            
+</div>
+    
+ 
+
+</body>
+</html>
