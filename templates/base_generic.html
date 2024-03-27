@@ -1,0 +1,44 @@
+{% load static %}
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      rel="preload"
+      as="style"
+      href="{% static 'css/style.css' %}"
+      onload="this.rel = 'stylesheet'"
+    />
+
+    <title>Hexagon Tool</title>
+
+</head>
+
+<body id="bg" style="background-image: url('{% static "images/1.jpg"%}')";>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>Hexagon Tool</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="{% url 'home' %}"  class="link">Home</a></li>
+                    <li><a href="{% url 'form2' %}"  class="link">Start</a></li>
+                    <li><a href="{% url 'about' %}" class="link">About</a></li>
+                </ul>
+            </div>
+      
+        </nav>
+    
+        {% block content %}
+        {%endblock content %}
+    </div>
+
+</body>
+</html>
